@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Busca de Operadoras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Busca de Operadoras</h1>
+        <div class="search-container">
+            <input type="text" v-model="query" placeholder="Digite sua busca...">
+            <button @click="search">Buscar</button>
+        </div>
+        <ul>
+            <li v-for="item in results" :key="item.Registro_ANS">
+                <strong>{{ item.Razao_Social }}</strong> - {{ item.CNPJ }}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="main.js"></script>
+</body>
+</html>
